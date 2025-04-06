@@ -1,46 +1,128 @@
-# Getting Started with Create React App
+# ExpertAssist AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ExpertAssist AI is an innovative application designed to automate routine information-gathering calls to experts in the real estate industry. By leveraging AI technology, the application saves time, improves accuracy, and provides actionable summaries for real estate professionals.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+ExpertAssist AI allows real estate professionals to delegate routine calls to an AI assistant, which can gather specific information from experts such as realtors, lenders, attorneys, and inspectors. The system automatically calls the expert, navigates the conversation intelligently, and provides a detailed summary of the information obtained.
 
-### `npm start`
+## Core Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **User Authentication**: Secure login and registration system for users to access their accounts.
+- **Expert Management**: Add, edit, and organize your network of real estate experts.
+- **Call Initiation**: Set up automated calls with specific goals and objectives.
+- **AI-Powered Calling**: The AI handles the conversation, adapting to responses and gathering required information.
+- **Call Tracking**: Monitor call status, listen to recordings, and view transcripts.
+- **Summaries & Transcripts**: Get concise, actionable summaries of each call along with full transcripts.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technology Stack
 
-### `npm test`
+- **Frontend**: React with TypeScript, Styled Components
+- **Backend**: Node.js, Express, TypeScript
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **AI Integration**: OpenAI API for natural language processing
+- **Telephony**: Twilio API for voice calling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14.0.0 or later)
+- npm or yarn
+- MongoDB instance
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/expertassist-ai.git
+   cd expertassist-ai
+   ```
 
-### `npm run eject`
+2. Install dependencies:
+   ```
+   npm install
+   # or
+   yarn install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Create a `.env` file in the root directory with the following variables:
+   ```
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   OPENAI_API_KEY=your_openai_api_key
+   TWILIO_ACCOUNT_SID=your_twilio_account_sid
+   TWILIO_AUTH_TOKEN=your_twilio_auth_token
+   TWILIO_PHONE_NUMBER=your_twilio_phone_number
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server:
+   ```
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Frontend Components
 
-## Learn More
+- **Authentication**
+  - Login form for existing users
+  - Registration form for new users
+  - AuthContext for managing authentication state
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Navigation**
+  - Navbar with conditional rendering based on auth status
+  - PrivateRoute for protecting authenticated routes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Dashboard**
+  - Overview of recent calls and experts
+  - Key metrics and quick access to main features
+
+- **Experts Management**
+  - ExpertsList: View and manage all experts
+  - ExpertForm: Add or edit expert details with form validation
+
+- **Calls Management**
+  - CallsList: View all calls with filtering by status
+  - CallDetails: Detailed view of call information including summary and transcript
+  - CallInitiate: Multi-step process to start a new AI call
+
+### Backend Structure
+
+- **Controllers**: Handle request/response logic
+- **Models**: Define data structures
+- **Routes**: Define API endpoints
+- **Services**: Implement business logic
+- **Middleware**: Handle authentication, error handling, etc.
+
+## Implementation Details
+
+The application uses a modern React architecture with TypeScript for type safety. The UI is built with styled-components for consistent styling and theming. 
+
+Key implementation features include:
+- Context API for global state management
+- React Router for navigation
+- JWT authentication with secure HTTP-only cookies
+- RESTful API design
+- Simulated API responses for development (to be replaced with real API calls)
+- Multi-step forms with validation
+- Responsive design that works on mobile and desktop
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- React
+- TypeScript
+- Node.js
+- Express
+- MongoDB
+- OpenAI API
+- Twilio API
+- Styled Components
